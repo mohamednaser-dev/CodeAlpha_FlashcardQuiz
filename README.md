@@ -1,75 +1,151 @@
-# React + TypeScript + Vite
+# Flashcard Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive flashcard quiz application built with **React, TypeScript, and Tailwind CSS**.
 
-Currently, two official plugins are available:
+The app allows users to create, edit, delete, and navigate through flashcards while studying. Flashcards are automatically saved in the browser using **localStorage**, so your data remains available when you return to the app.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+* 📚 Display flashcards with questions and answers
+* 👀 Show and hide answers
+* ⬅️ Navigate to the previous flashcard
+* ➡️ Navigate to the next flashcard
+* ➕ Add new flashcards
+* ✏️ Edit existing flashcards
+* 🗑️ Delete flashcards
+* 💾 Save flashcards using localStorage
+* 📱 Fully responsive design
+* 🎨 Clean and simple user interface
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the ESLint configuration
+* **React**
+* **TypeScript**
+* **Tailwind CSS**
+* **Vite**
+* **localStorage**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+flashcard-quiz/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Flashcard.tsx
+│   │   ├── CardNavigation.tsx
+│   │   ├── CardActions.tsx
+│   │   └── FlashcardForm.tsx
+│   ├── data/
+│   │   └── initialFlashcards.ts
+│   ├── types/
+│   │   └── flashcard.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the repository
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone <your-repository-url>
 ```
+
+### 2. Navigate to the project directory
+
+```bash
+cd flashcard-quiz
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL provided by Vite in your browser.
+
+## Build for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## How It Works
+
+Each flashcard contains:
+
+* **Question** — displayed on the front of the card.
+* **Answer** — displayed when the user clicks **Show Answer**.
+
+Users can move between flashcards using the **Previous** and **Next** buttons.
+
+The **Add Card**, **Edit Card**, and **Delete Card** actions allow users to customize their study cards.
+
+### Data Persistence
+
+Flashcards are stored in the browser's `localStorage`.
+
+This means that added, edited, or deleted flashcards remain available after refreshing or reopening the application in the same browser.
+
+## Responsive Design
+
+The application is designed to work across different screen sizes, including:
+
+* 📱 Mobile devices
+* 📱 Tablets
+* 💻 Laptops
+* 🖥️ Desktop screens
+
+## Future Improvements
+
+Possible future improvements include:
+
+* Search and filter flashcards
+* Flashcard categories
+* Study progress tracking
+* Quiz mode with scoring
+* Dark mode
+* Import and export flashcards
+* Random flashcard mode
+
+## Author
+
+**Mohamed Naser**
+
+Frontend Developer
+
+### Technologies & Skills
+
+React · TypeScript · Tailwind CSS · JavaScript · Next.js
+
+## License
+
+This project was created for learning and training purposes.
